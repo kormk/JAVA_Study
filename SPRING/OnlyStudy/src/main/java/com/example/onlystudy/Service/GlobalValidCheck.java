@@ -1,4 +1,4 @@
-package com.example.onlystudy.Controller;
+package com.example.onlystudy.Service;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
@@ -23,14 +23,13 @@ public class GlobalValidCheck<T>
 
         if (violations.isEmpty()) {// 오류 내용이 없다면 성공
             return "success";
-        } else {// 오류 내용이 있다면 errorMessage에 저장하고 출력
-                StringBuilder errorMessage = new StringBuilder();
-                for (ConstraintViolation<T> violation : violations)
-                {
-                    errorMessage.append(violation.getPropertyPath()).append(": ").append(violation.getMessage());
-                }
-                return errorMessage.toString();
-
+        } else
+        {  // 오류 내용이 있다면 errorMessage에 저장하고 출력
+            StringBuilder errorMessage = new StringBuilder();
+            for (ConstraintViolation<T> violation : violations) {
+                errorMessage.append(violation.getPropertyPath()).append(" : ").append(violation.getMessage()).append("\n");
+            }
+            return errorMessage.toString();
         }
     }
 }

@@ -1,13 +1,16 @@
 package com.example.onlystudy.DTO;
 
-import jakarta.validation.constraints.*;
-import lombok.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Pattern;
+import lombok.Getter;
+import lombok.ToString;
 import org.springframework.stereotype.Component;
+
 
 @Getter
 @ToString
 @Component
-public class testDTO {
+public class anotherDTO {
 
     @Pattern(regexp = "^[a-zA-Z]*$", message = "형식이 올바르지 않습니다.")
     String id; // id
@@ -19,7 +22,6 @@ public class testDTO {
 
     String date; // 정규식 검사 날짜 형식
 
-    @Max(value = 30,message = "최대 나이는 30살 입니다.")
+    @Max(value = 50, message = "최대 나이는 30살 입니다.")
     int age;  // validation
-
 }
