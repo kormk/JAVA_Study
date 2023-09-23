@@ -1,11 +1,8 @@
 package com.example.onlystudy.Entity;
 
 import com.example.onlystudy.DTO.testDTO;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.Builder;
+import com.example.onlystudy.Service.Category;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 
@@ -28,9 +25,10 @@ public class testEntity {
     @Column
     int age; // validation
 
+    @Column
+    String category;
 
-
-    public testEntity DtoToEntity(testDTO dto)
+    public testEntity dtoToEntity(testDTO dto)
     {
         testEntity entity = new testEntity();
 
@@ -39,7 +37,23 @@ public class testEntity {
         entity.email = dto.getEmail();
         entity.date = dto.getDate();
         entity.age = dto.getAge();
+        entity.category = Category.valueOf(dto.getCategory().toUpperCase()).name();
 
         return entity;
     }
+
+    public testDTO entityToDto(testEntity entity)
+    {
+        testDTO dto = new testDTO();
+
+        dto.setId(entity.id);
+        dto.setPw(entity.pw);
+        dto.setEmail(entity.email);
+        dto.setDate(entity.date);
+        dto.setAge(entity.age);
+        dto.setCategory(entity.category);
+
+        return dto;
+    }
+
 }

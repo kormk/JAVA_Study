@@ -6,6 +6,8 @@ import com.example.onlystudy.Repository.testRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 @Repository
 public class TestDAOImpl implements TestDAO{
@@ -28,6 +30,11 @@ public class TestDAOImpl implements TestDAO{
     @Override
     public void deleteTest(testEntity testEntity) {
         this.testRepository.deleteById(testEntity.getId());
+    }
+
+    @Override
+    public List<testEntity> categoryFillter(String category) {
+        return this.testRepository.getAllByCategory(category);
     }
 
 }

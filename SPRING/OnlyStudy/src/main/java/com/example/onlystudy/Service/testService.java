@@ -1,11 +1,13 @@
 package com.example.onlystudy.Service;
 
 import com.example.onlystudy.DAO.TestDAO;
-import com.example.onlystudy.DTO.anotherDTO;
 import com.example.onlystudy.DTO.testDTO;
 import com.example.onlystudy.Entity.testEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Service
@@ -14,7 +16,7 @@ public class testService {
 
     private final TestDAO dao;
 
-    // 원래 의도의 valid검사
+    // veloge1. 원래 의도의 valid검사
     private final GlobalValidCheck<testDTO> validCheck;
     public testService(@Autowired TestDAO dao,
                        @Autowired GlobalValidCheck<testDTO> validCheck)
@@ -24,7 +26,7 @@ public class testService {
     }
 
 
-//// 제네릭 타입에 잘못 넣은 경우
+//// veloge 2. 제네릭 타입에 잘못 넣은 경우
 //    private final GlobalValidCheck<anotherDTO> validCheck;
 //    public testService(@Autowired TestDAO dao,
 //                       @Autowired GlobalValidCheck<anotherDTO> validCheck)
@@ -37,17 +39,34 @@ public class testService {
     public String regist(testDTO dto)
     {
         String validatoin = validCheck.validCheck(dto);
-
         if (validatoin.equals("success")) dao.createTest(DtoToEneity(dto));
 
         return validatoin;
     }
 
-    public void modify(testDTO dto)
+    public String modify(testDTO dto)
     {
-        dao.updateTest(DtoToEneity(dto));
+        String validatoin = validCheck.validCheck(dto);
+
+        if (validatoin.equals("success")) dao.updateTest(DtoToEneity(dto));
+
+        return validatoin;
     }
 
+
+    public List<testDTO> filter(String userSelect)
+    {
+        String str = Category.valueOf(userSelect.toUpperCase()).name();
+        List<testEntity> entityList= dao.categoryFillter(str);
+        List<testDTO> dtoList = new ArrayList<>();
+
+        for( var item : entityList)
+        {
+            dtoList.add(item.entityToDto(item));
+        }
+
+        return dtoList;
+    }
 
 
 
@@ -55,7 +74,7 @@ public class testService {
     public testEntity DtoToEneity(testDTO dto)
     {
         // global valid check 들어갈 자리
-        return new testEntity().DtoToEntity(dto);
+        return new testEntity().dtoToEntity(dto);
     }
 
 }

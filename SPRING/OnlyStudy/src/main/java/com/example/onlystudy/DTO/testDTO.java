@@ -5,11 +5,14 @@ import lombok.*;
 import org.springframework.stereotype.Component;
 
 @Getter
+@Setter
 @ToString
 @Component
+@AllArgsConstructor
+@NoArgsConstructor
 public class testDTO {
 
-    @Pattern(regexp = "^[a-zA-Z]*$", message = "형식이 올바르지 않습니다.")
+//    @Pattern(regexp = "[가-힣]*$", message = "형식이 올바르지 않습니다.")
     String id; // id
 
     String pw; // 정규식 검사 특정 문자 포함
@@ -21,5 +24,7 @@ public class testDTO {
 
     @Max(value = 30,message = "최대 나이는 30살 입니다.")
     int age;  // validation
+
+    String category;
 
 }
