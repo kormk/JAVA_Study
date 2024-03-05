@@ -6,9 +6,9 @@
 
 이펙티드 자바(조슈아 브로크 저)를 읽고 정리한 내용을 기록하고있습니다.
 
-|Item no|Contents|
-|:---:|:---|
-|42|익명 클래스보다는 람다를 사용하라|
+|Item no|Contents|Link|
+|:---:|:---|---|
+|42|익명 클래스보다는 람다를 사용하라|https://github.com/kormk/JAVA-Study/blob/main/JAVA/Item%2042%20익명%20클래스보다는%20람다를%20사용하라.md|
 
 </br>
 </br>
