@@ -9,6 +9,7 @@
 |Item no|Contents|Link|
 |:---:|:---|---|
 |42|익명 클래스보다는 람다를 사용하라|https://github.com/kormk/JAVA-Study/blob/main/JAVA/Item%2042%20익명%20클래스보다는%20람다를%20사용하라.md|
+|43|람다보다는 메서드 참조를 사용하라|https://github.com/kormk/JAVA-Study/blob/main/JAVA/item%2043%20람다보다는%20메서드참조를%20사용하라.md|
 
 </br>
 </br>
