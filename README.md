@@ -9,10 +9,10 @@
 ## 7장 람다와 스트림
 |Item no|Contents|Link|
 |:---:|:---|---|
-|42|익명 클래스보다는 람다를 사용하라|https://github.com/kormk/JAVA-Study/blob/main/JAVA/Item%2042%20익명%20클래스보다는%20람다를%20사용하라.md|
-|43|람다보다는 메서드 참조를 사용하라|https://github.com/kormk/JAVA-Study/blob/main/JAVA/item%2043%20람다보다는%20메서드참조를%20사용하라.md|
-|44|표준 함수형 인터페이스를 사용하라|https://github.com/kormk/JAVA-Study/blob/main/JAVA/item%2043%20람다보다는%20메서드참조를%20사용하라.md|
-|45|스트림은 주의해서 사용하라|https://github.com/kormk/JAVA-Study/blob/main/JAVA/Item%2045%20스트림은%20주의해서%20사용하라.md|
+|42|익명 클래스보다는 람다를 사용하라|[Item 42](https://github.com/kormk/JAVA-Study/blob/main/JAVA/Item%2042%20익명%20클래스보다는%20람다를%20사용하라.md)|
+|43|람다보다는 메서드 참조를 사용하라|[Item 43](https://github.com/kormk/JAVA-Study/blob/main/JAVA/item%2043%20람다보다는%20메서드참조를%20사용하라.md)|
+|44|표준 함수형 인터페이스를 사용하라|[Item 44](https://github.com/kormk/JAVA-Study/blob/main/JAVA/item%2043%20람다보다는%20메서드참조를%20사용하라.md)|
+|45|스트림은 주의해서 사용하라|[Item 45](https://github.com/kormk/JAVA-Study/blob/main/JAVA/Item%2045%20스트림은%20주의해서%20사용하라.md)|
 
 </br>
 </br>
